@@ -19,4 +19,3 @@ drop table pagamentos;
 drop table produtos;
 drop table categorias;
 drop table marcas;
-

@@ -152,12 +152,12 @@ insert into pagamentos(metodo) values
 	('Cortesia');
 
 insert into pedidos(codigo_pagamento, codigo_cliente, data_pedido, valor_total) values
-    (1, 1, '2022-10-22', 45.00),
-    (3, 1, '2022-10-21', 10.00),
-    (5, 2, '2022-10-20', 5.50),
+    (1, 1, '2022-10-15', 45.00),
+    (3, 1, '2022-10-16', 10.00),
+    (5, 2, '2022-10-12', 5.50),
     (7, 2, '2022-10-11', 37.50),
     (9, 3, '2022-10-10', 3.00),
-    (2, 4, '2022-09-18', 34.00),
+    (2, 4, '2022-09-09', 34.00),
     (2, 5, '2022-09-17', 180.00),
     (1, 6, '2022-09-16', 20.00),
     (3, 7, '2022-09-05', 16.50),
@@ -184,4 +184,4 @@ select * from categorias;
 select * from marcas;
 select * from pagamentos;
 select * from pedidos;
-select * from itens_pedidos;  
+select * from itens_pedidos;
