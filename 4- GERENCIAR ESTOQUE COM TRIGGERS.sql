@@ -1,4 +1,5 @@
-# TRIGGERS PARA CONTROLE DE ESTOQUE;
+# 4- GERENCIAR ESTOQUE COM TRIGGERS
+
 DELIMITER $
 create trigger tgr_diminuir_estoque 
 after insert on itens_pedidos

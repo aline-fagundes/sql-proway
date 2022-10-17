@@ -1,4 +1,6 @@
-# SCRIPT PARA CRIAR AS TABELAS
+# 1- CRIAR E POPULAR TABELAS
+
+-- SCRIPT PARA CRIAR AS TABELAS
 create schema naponline_lojinha;
 
 create table enderecos(
@@ -50,6 +52,7 @@ create table pedidos(
     codigo_pagamento int,
     codigo_cliente int,
     data_pedido date,
+    valor_total float,
 	constraint fk_cliente foreign key (codigo_cliente) references clientes(codigo_cliente),
     constraint fk_pagamento foreign key (codigo_pagamento) references pagamentos(codigo_pagamento)
 );
@@ -66,7 +69,7 @@ create table itens_pedidos(
 
 
 
-# SCRIPT PARA POPULAR AS TABELAS
+-- SCRIPT PARA POPULAR AS TABELAS
 insert into enderecos(cidade, estado) values 
 	('São Paulo', 'SP'),
     ('Salto', 'SP'),
@@ -135,7 +138,7 @@ insert into produtos(nome_produto, valor_produto, estoque, codigo_marca, codigo_
 	('Bolacha wafer toddy', 3.00, 20, 3, 7);
   
   
-
+  
 insert into pagamentos(metodo) values
 	('Pix'),
     ('Cartao de debito'),
@@ -148,29 +151,29 @@ insert into pagamentos(metodo) values
     ('PicPay'),
 	('Cortesia');
 
-insert into pedidos(codigo_pagamento, codigo_cliente, data_pedido) values
-    (1, 1, '2022-10-22'),
-    (3, 1, '2022-10-21'),
-    (5, 2, '2022-10-20'),
-    (7, 2, '2022-10-11'),
-    (9, 3, '2022-10-10'),
-    (2, 4, '2022-09-18'),
-    (2, 5, '2022-09-17'),
-    (1, 6, '2022-09-16'),
-    (3, 7, '2022-09-05'),
-    (5, 8, '2022-09-04');
+insert into pedidos(codigo_pagamento, codigo_cliente, data_pedido, valor_total) values
+    (1, 1, '2022-10-22', 45.00),
+    (3, 1, '2022-10-21', 10.00),
+    (5, 2, '2022-10-20', 5.50),
+    (7, 2, '2022-10-11', 37.50),
+    (9, 3, '2022-10-10', 3.00),
+    (2, 4, '2022-09-18', 34.00),
+    (2, 5, '2022-09-17', 180.00),
+    (1, 6, '2022-09-16', 20.00),
+    (3, 7, '2022-09-05', 16.50),
+    (5, 8, '2022-09-04', 0.00);
     
 insert into itens_pedidos(codigo_pedido, codigo_produto, quantidade) values
     (1, 1, 3),
+    (1, 10, 10),
     (2, 2, 5),
-    (3, 3, 6),
+    (3, 3, 1),
     (4, 9, 10),
     (5, 8, 1),
-    (6, 7, 5),
+    (6, 7, 4),
     (7, 5, 9),
     (8, 4, 1),
-    (9, 3, 3),
-    (1, 10, 10);
+    (9, 3, 3);
     
     
     
