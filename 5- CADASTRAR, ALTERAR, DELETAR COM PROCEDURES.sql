@@ -104,7 +104,7 @@ begin
     end $$
 DELIMITER ;
 
-call cadastrar_produto('Chocolate com amendoim', 5.00, 25, 1, 2); 
+call cadastrar_produto('Chocolate com amendoim', 5.00, 25, 1, 1); 
 call alterar_produto('Chocolate com amendoim', 1, 5.50); 
 select * from produtos;
 
